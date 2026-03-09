@@ -5,7 +5,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
    <meta name="description" content="My professional portfolio website">
-</head>
 <title>Yadhir's Portfolio</title>
   <style>
     /*Styling the nav bar for the website*/
@@ -29,17 +28,24 @@
     display:block;
     position:sticky;
     flex: 1;
-    padding: 15px;
+    padding: 10px;
+    border-radius:4px;
+    margin:-2px;
     text-decoration: none;
     color: black;
     font-weight: bold;
     transition: background 0.3s ease;
+    
 }
 
 .nav a:hover{
     background-color:rgb(165, 159, 159);
-    column-gap: fill;
+    column-gap:normal;
+    border-width:1px;
 }
+
+
+
 /*Styling the body and information for the website*/
 
 body{
@@ -97,14 +103,171 @@ footer{
 html {
   overflow-y: scroll;
 }
+
+/*Styling the About Me Section*/
+.underline{
+text-decoration:none;
+    background-color: rgb(165, 159, 159);
+    color:black;
+    text-align:center;
+    font-size:15px;
+    color: black;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    padding:5px;
+    margin:5px;
+    border-radius:5px;
+
+}
+
+.underline a:hover{
+    text-decoration:none;
+
+}
+
+/*Styling the Contact Me Section*/
+/* ==Testimonials Section == */
+:root {
+  --t-pad-y: clamp(2rem, 5vw, 4rem);
+
+  --t-gap: 1rem;
+  --t-radius: 1rem;
+
+  --t-btn-radius: 0.75rem;
+  --t-btn-pad: 0.5rem 0.75rem;
+
+  --t-border: 1px solid rgba(255, 255, 255, 0.12);
+  --t-border-strong: 1px solid rgba(255, 255, 255, 0.2);
+
+  --t-bg: rgba(0, 0, 0, 0.2);
+  --t-btn-bg: rgba(255, 255, 255, 0.06);
+
+  --t-focus: 3px solid #7aa7ff;
+
+  --t-card-width: min(420px, 85vw);
+  --t-embed-minh: 260px;
+
+  --t-scrollbar-h: 10px;
+  --t-scrollbar-thumb: rgba(255, 255, 255, 0.18);
+}
+
+/* Section wrapper */
+.testimonials {
+  padding-block: var(--t-pad-y);
+}
+
+/* Header layout */
+.testimonials_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--t-gap);
+}
+
+/* Fix naming to match BEM style */
+.testimonials_sub {
+  margin: 0.5rem 0 1.25rem;
+  opacity: 0.85;
+}
+
+/* Fix naming to match BEM style */
+.testimonials_controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.tbtn {
+  border: var(--t-border-strong);
+  background: var(--t-btn-bg);
+  color: inherit;
+  border-radius: var(--t-btn-radius);
+  padding: var(--t-btn-pad);
+  cursor: pointer;
+}
+
+.tbtn:focus-visible {
+  outline: var(--t-focus);
+  outline-offset: 2px;
+}
+
+/* ==Scroll Track (Single Block)== */
+.testimonial-track {
+  display: flex;
+  gap: var(--t-gap);
+
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding-block: 0.25rem 0.75rem;
+
+  /* Better UX */
+  scrollbar-gutter: stable;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+}
+
+.testimonial-track:focus-visible {
+  outline: var(--t-focus);
+  outline-offset: 6px;
+  border-radius: var(--t-radius);
+}
+
+/* Scrollbar styling (WebKit) */
+.testimonial-track::-webkit-scrollbar {
+  height: var(--t-scrollbar-h);
+}
+
+.testimonial-track::-webkit-scrollbar-thumb {
+  background: var(--t-scrollbar-thumb);
+  border-radius: 999px;
+}
+
+/* When auto-scrolling, disabling snap for smoother marquee */
+.testimonial-track.is-autoscrolling {
+  scroll-snap-type: none;
+}
+
+/* ==Cards== */
+.testimonial-card {
+  flex: 0 0 var(--t-card-width);
+  scroll-snap-align: start;
+
+  border: var(--t-border);
+  border-radius: var(--t-radius);
+  padding: 1rem;
+  background: var(--t-bg);
+}
+
+/* Embed container */
+.embed-wrap {
+  width: 100%;
+  min-height: var(--t-embed-minh);
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
   </style>
+</head>
 <body>
     <!--Navigation bar for the website-->
     <div class="nav">
-        <a href="homepage.html">Homepage</a>
-        <a div=#about>About Me</a>
-        <a div=#projects>Projects</a>
-        <a div=#contact>Contact Me</a>
+        <a href="index.html">Homepage</a>
+        <a href= #About>About Me</a>
+        <a href= #Projects>Projects</a>
+        <a href= #Contact >Contact Me</a>
     </div>
 
     <!--Information for the homepage-->
@@ -150,7 +313,18 @@ html {
     <hr/>
 
     <!--About Me section-->
-    <h1>About Me</h1>
+    <h1 id="About">About Me</h1>
+    <p>I'm Yadhir, a proactive, punctual person with strong communication skills and a lifelong learning mindset.</p>
+
+    <p>I enjoy solving real-world problems and making smart decisions
+       through code and other tech implemenatation strategies.
+    </p>
+
+    <p></p>🚀 Fun Facts</p>
+    <p>Love listening to music.</p>
+    <p></p>I love coffee or tea.</p>
+    <p>Learning about various topics interest me.</p>
+    <p>Hobbies: gym, building things, AI/Informative news.</p>
 
      <h2>Awards and Certifications</h2>
      <h3>2024 Best Customer Service Consultant</h3>
@@ -158,23 +332,75 @@ html {
     <li>Yet to obtain in the future.</li>
         <h2>Skills</h2>
     <ul>
-        <li>Customer service: ⭐️⭐️⭐️⭐️</li>
-        <li>Microsoft Office Suite: ⭐️⭐️⭐️</li>
-        <li>Organizational skills: ⭐️⭐️⭐️⭐️</li>
+        <li>Customer service: ⭐️⭐️⭐️⭐️⭐️</li>
+        <li>Microsoft Office Suite: ⭐️⭐️⭐️⭐️</li>
+        <li>Organizational skills: ⭐️⭐️⭐️⭐️⭐️</li>
         <li>Ability to adapt:⭐️⭐️⭐️⭐️⭐️</li>
-        <li>Honesty and Integrity:⭐️⭐️⭐️⭐️</li>
+        <li>Honesty and Integrity:⭐️⭐️⭐️⭐️⭐️</li>
     </ul>
     <hr/>
     
     <!--Projects Section-->
-     <h1>Projects</h1>
+     <h1 id="Projects">Projects</h1>
       <p>Here are some of my projects:</p>
+      <p>Eco-Smart-Water-Bottle :<a class="underline"href="https://yadhirr.github.io/Eco-Smart-Water-Bottle/">View Project</a></p>
+      <p>To-Do-List:<a class="underline" href="https://yadhirr.github.io/To-do-list/">View Project</a></p>
+
+      <p></p>
     
     <hr/>
     <!--Contact Me section-->
-      <h1>Contact Me</h1>
+      <h1 id="Contact">Contact Me</h1>
         <p>Contact me for any Web Development inquiries:</p>
+<section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
+  <div class="testimonials_header">
+    <h2 id="testimonials-title">Testimonials</h2>
+    <div class="testimonials__controls">
+      <button class="tbtn" type="button" data-dir="-1" aria-label="Scroll testimonials left">←</button>
+      <button class="tbtn" type="button" data-dir="1" aria-label="Scroll testimonials right">→</button>
+    </div>
+  </div>
 
+  <p class="testimonials_sub">
+    Real feedback from people I've assisted. (scroll to read more).
+  </p>
+
+  <div class="testimonial-track" 
+    role="region" 
+    aria-label="Scrollable testimonials" 
+    tabindex="0" 
+    data-autoscroll="true"
+    data-speed="0.6">
+
+    <!-- Card 1: Paste a real embed here (example placeholder) -->
+    <article class="testimonial-card">
+      <h3 class="sr-only">Review 1</h3>
+
+      <!--  Paste the platform embed code inside this container -->
+      <div class="embed-wrap">
+        <!-- Example: Yelp/Trustpilot embed code goes here -->
+        <!-- (See sections below for where to copy it from) -->
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="testimonial-card">
+      <h3 class="sr-only">Review 2</h3>
+      <div class="embed-wrap">
+        <!-- Paste another embed code here -->
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="testimonial-card">
+      <h3 class="sr-only">Review 3</h3>
+      <div class="embed-wrap">
+        <!-- Paste another embed code here -->
+      </div>
+    </article>
+  </div>
+</section>
+        <hr/>
 
     <!--Footer-->
     <footer>
@@ -184,13 +410,139 @@ html {
     </footer>
     
     
-    <!--Javascript-->
-    <script>
 
+    
+    <!--Linking javascript file-->
+<script>
+(function () {
+  const track = document.querySelector(".testimonial-track");
+  const buttons = document.querySelectorAll(".tbtn");
+  if (!track) return;
 
-    </script>
+  // --- Controls (Prev/Next) stay the same ---
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const dir = Number(btn.dataset.dir || 1);
+      const scrollAmount = track.clientWidth * 0.9;
+      track.scrollBy({ left: dir * scrollAmount, behavior: "smooth" });
+    });
+  });
+
+  // Keyboard arrows when track is focused
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") track.scrollBy({ left: track.clientWidth * 0.6, behavior: "smooth" });
+    if (e.key === "ArrowLeft")  track.scrollBy({ left: -track.clientWidth * 0.6, behavior: "smooth" });
+  });
+
+  // --- Auto-scroll (marquee) ---
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const autoscrollEnabled = track.dataset.autoscroll !== "false";
+  if (!autoscrollEnabled || prefersReduced.matches) return;
+
+  // Read speed from data attribute (px per frame)
+  const SPEED = Math.max(0.2, Number(track.dataset.speed || 0.6));
+
+  // Clone children for seamless looping
+  // (Only if not already cloned)
+  if (!track.dataset.cloned) {
+    const items = Array.from(track.children);
+    items.forEach(node => track.appendChild(node.cloneNode(true)));
+    track.dataset.cloned = "true";
+  }
+
+  let rafId = null;
+  let running = false;
+  let paused = false;
+  let resumeTimer = null;
+
+  function setPaused(value) {
+    paused = value;
+    if (paused) {
+      track.classList.remove("is-autoscrolling");
+    } else {
+      track.classList.add("is-autoscrolling");
+    }
+  }
+
+  function stop() {
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+    track.classList.remove("is-autoscrolling");
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
+    setPaused(false);
+    loop();
+  }
+
+  function loop() {
+    if (!running) return;
+
+    if (!paused) {
+      // Move right
+      track.scrollLeft += SPEED;
+
+      // Seamless loop point:
+      // After cloning, the "real" content length is half the scrollWidth.
+      const half = track.scrollWidth / 2;
+
+      // If we've scrolled past the first set, jump back by half
+      if (track.scrollLeft >= half) {
+        track.scrollLeft -= half;
+      }
+    }
+
+    rafId = requestAnimationFrame(loop);
+  }
+
+  // Pause on hover (desktop)
+  track.addEventListener("mouseenter", () => setPaused(true));
+  track.addEventListener("mouseleave", () => setPaused(false));
+
+  // Pause when focused (keyboard / accessibility)
+  track.addEventListener("focusin", () => setPaused(true));
+  track.addEventListener("focusout", () => setPaused(false));
+
+  // Pause while user manually interacts (wheel/touch/drag),
+  // then resume after 1.2 seconds.
+  function pauseTemporarily() {
+    setPaused(true);
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => setPaused(false), 1200);
+  }
+
+  track.addEventListener("wheel", pauseTemporarily, { passive: true });
+  track.addEventListener("touchstart", pauseTemporarily, { passive: true });
+  track.addEventListener("touchmove", pauseTemporarily, { passive: true });
+  track.addEventListener("pointerdown", pauseTemporarily, { passive: true });
+  track.addEventListener("scroll", () => {
+    // If the user scrolls via trackpad, pause for a moment
+    pauseTemporarily();
+  }, { passive: true });
+
+  // Optional: pause when the track is offscreen (performance)
+  const io = new IntersectionObserver((entries) => {
+    const visible = entries[0]?.isIntersecting;
+    if (!visible) setPaused(true);
+    else setPaused(false);
+  }, { threshold: 0.15 });
+
+  io.observe(track);
+
+  // If user changes motion preference while on page
+  prefersReduced.addEventListener?.("change", (e) => {
+    if (e.matches) stop();
+    else start();
+  });
+
+  // Start auto-scroll
+  start();
+})();
+</script>
+
 
 </body>
 </html>
-
-
