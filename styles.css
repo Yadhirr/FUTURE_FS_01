@@ -19,40 +19,30 @@
   --transition: 220ms ease;
 }
 
-
 /* Creative scrolling gradient background */
 .scroll-gradient-bg {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% calc(10% + var(--scroll-offset, 0px)), rgba(255, 255, 255, 0.08), transparent 22%),
-    radial-gradient(circle at 80% calc(20% + var(--scroll-offset, 0px) * 0.6), rgba(255, 255, 255, 0.05), transparent 20%),
-    radial-gradient(circle at 50% calc(80% - var(--scroll-offset, 0px) * 0.35), rgba(255, 255, 255, 0.04), transparent 24%),
+    radial-gradient(circle at 20% calc(10% + var(--scroll-offset, 0px)), rgba(255, 255, 255, 0.13), transparent 24%),
+    radial-gradient(circle at 80% calc(20% + var(--scroll-offset, 0px) * 0.6), rgba(255, 255, 255, 0.09), transparent 22%),
+    radial-gradient(circle at 50% calc(80% - var(--scroll-offset, 0px) * 0.35), rgba(255, 255, 255, 0.07), transparent 26%),
     linear-gradient(180deg, #000000 0%, #0a0a0a 45%, #000000 100%);
-  transition: background-position 0.1s linear;
-  filter: blur(0px);
 }
 
-/* Optional soft layer for extra depth */
+/* Optional soft glow overlay for extra depth */
 .scroll-gradient-bg::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.03), transparent 18%),
-    radial-gradient(circle at 70% 75%, rgba(255, 255, 255, 0.025), transparent 18%);
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.04), transparent 18%),
+    radial-gradient(circle at 70% 75%, rgba(255, 255, 255, 0.03), transparent 18%);
   mix-blend-mode: screen;
-  opacity: 0.85;
+  opacity: 0.9;
 }
-
-/* Make sure your main content stays above the background */
-.site-shell {
-  position: relative;
-  z-index: 1;
-}
-
 
 /* Global box sizing for better layout control */
 * {
@@ -64,16 +54,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Main page styling and monochrome background */
+/* Main page styling */
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 25%),
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.03), transparent 20%),
-    linear-gradient(180deg, #000000 0%, #0a0a0a 45%, #000000 100%);
+  background: #000000;
   color: var(--text);
   line-height: 1.6;
+}
+
+/* Main site wrapper keeps content above background */
+.site-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 /* Responsive image handling */
@@ -117,12 +112,6 @@ button {
   left: 1rem;
 }
 
-/* Main site wrapper height */
-.site-shell {
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
 /* Shared container width */
 .container {
   width: min(calc(100% - 2rem), var(--max-width));
@@ -154,7 +143,7 @@ button {
   pointer-events: none;
 }
 
-/* Ensure content appears above panel background */
+/* Ensure section content appears above decorative panel */
 .section-panel > .container {
   position: relative;
   z-index: 1;
