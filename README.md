@@ -15,7 +15,7 @@ This is my personal portfolio website built with **HTML, CSS, and JavaScript**. 
 - JavaScript
 
 ## Live Demo
-[View Portfolio](https://your-live-link.com)
+[View Portfolio]((https://yadhirr.github.io/FUTURE_FS_01/))
 
 
 ## Purpose
