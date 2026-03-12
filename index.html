@@ -1,549 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
-   <meta name="description" content="My professional portfolio website">
-<title>Yadhir's Portfolio</title>
-  <style>
-    /*Styling the nav bar for the website*/
-.nav{
-    display:flex;
-    margin:20px;
-    border:5px solid rgb(0, 0, 0);
-    border-style:outset;
-    position:sticky;
-    top: 0;
-    background: white;
-    align-items: center;
-    padding: 0;
-}
-
-.nav a{
-    text-decoration:none;
-    color:rgb(0, 0, 0);
-    text-align:center;
-    font-size:15px;
-    display:block;
-    position:sticky;
-    flex: 1;
-    padding: 10px;
-    border-radius:4px;
-    margin:-2px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    
-}
-
-.nav a:hover{
-    background-color:rgb(165, 159, 159);
-    column-gap:normal;
-    border-width:1px;
-}
-
-
-
-/*Styling the body and information for the website*/
-
-body{
-    background-color:rgb(255, 255, 255)
-}
-
-h1{
-    color:rgb(0, 0, 0);
-    text-align:center;
-    font-style: italic ;
-}
-h2{
-    color:rgb(0, 0, 0);
-    font-style: italic ;
-}
-
-h3{
-    color:rgb(0, 0, 0);
-    font-style: italic ;
-}
-
-h4{
-    color:rgb(0, 0, 0);
-    font-style: italic ;
-}
-
-h5{
-    color:rgb(0, 0, 0);
-    text-align:center;
-}
-
-p{
-    color:rgb(0, 0, 0);
-    font-style: italic ;
-}
-
-li{
-    color:rgb(0, 0, 0);
-    font-style: italic ;
-
-}
-
-/*Removing the underline fron the job title*/
-.job{
-    text-decoration: underline;
-}
-
-/*Styling the footer for the website*/
-footer{
-    text-align:center;
-    
-}
-
-/*Permanently showing the scroll bar on the right of the page to prevent content from shifting when scrolling*/
-html {
-  overflow-y: scroll;
-}
-
-/*Styling the About Me Section*/
-.underline{
-text-decoration:none;
-    background-color: rgb(165, 159, 159);
-    color:black;
-    text-align:center;
-    font-size:15px;
-    color: black;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    padding:5px;
-    margin:5px;
-    border-radius:5px;
-
-}
-
-.underline a:hover{
-    text-decoration:none;
-
-}
-
-/*Styling the Contact Me Section*/
-/* ==Testimonials Section == */
-:root {
-  --t-pad-y: clamp(2rem, 5vw, 4rem);
-
-  --t-gap: 1rem;
-  --t-radius: 1rem;
-
-  --t-btn-radius: 0.75rem;
-  --t-btn-pad: 0.5rem 0.75rem;
-
-  --t-border: 1px solid rgba(255, 255, 255, 0.12);
-  --t-border-strong: 1px solid rgba(255, 255, 255, 0.2);
-
-  --t-bg: rgba(0, 0, 0, 0.2);
-  --t-btn-bg: rgba(255, 255, 255, 0.06);
-
-  --t-focus: 3px solid #7aa7ff;
-
-  --t-card-width: min(420px, 85vw);
-  --t-embed-minh: 260px;
-
-  --t-scrollbar-h: 10px;
-  --t-scrollbar-thumb: rgba(255, 255, 255, 0.18);
-}
-
-/* Section wrapper */
-.testimonials {
-  padding-block: var(--t-pad-y);
-}
-
-/* Header layout */
-.testimonials_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--t-gap);
-}
-
-/* Fix naming to match BEM style */
-.testimonials_sub {
-  margin: 0.5rem 0 1.25rem;
-  opacity: 0.85;
-}
-
-/* Fix naming to match BEM style */
-.testimonials_controls {
-  display: flex;
-  gap: 0.5rem;
-}
-
-/* Buttons */
-.tbtn {
-  border: var(--t-border-strong);
-  background: var(--t-btn-bg);
-  color: inherit;
-  border-radius: var(--t-btn-radius);
-  padding: var(--t-btn-pad);
-  cursor: pointer;
-}
-
-.tbtn:focus-visible {
-  outline: var(--t-focus);
-  outline-offset: 2px;
-}
-
-/* ==Scroll Track (Single Block)== */
-.testimonial-track {
-  display: flex;
-  gap: var(--t-gap);
-
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-
-  padding-block: 0.25rem 0.75rem;
-
-  /* Better UX */
-  scrollbar-gutter: stable;
-  overscroll-behavior-x: contain;
-  touch-action: pan-x;
-}
-
-.testimonial-track:focus-visible {
-  outline: var(--t-focus);
-  outline-offset: 6px;
-  border-radius: var(--t-radius);
-}
-
-/* Scrollbar styling (WebKit) */
-.testimonial-track::-webkit-scrollbar {
-  height: var(--t-scrollbar-h);
-}
-
-.testimonial-track::-webkit-scrollbar-thumb {
-  background: var(--t-scrollbar-thumb);
-  border-radius: 999px;
-}
-
-/* When auto-scrolling, disabling snap for smoother marquee */
-.testimonial-track.is-autoscrolling {
-  scroll-snap-type: none;
-}
-
-/* ==Cards== */
-.testimonial-card {
-  flex: 0 0 var(--t-card-width);
-  scroll-snap-align: start;
-
-  border: var(--t-border);
-  border-radius: var(--t-radius);
-  padding: 1rem;
-  background: var(--t-bg);
-}
-
-/* Embed container */
-.embed-wrap {
-  width: 100%;
-  min-height: var(--t-embed-minh);
-}
-
-/* Screen-reader only */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-  </style>
-</head>
-<body>
-    <!--Navigation bar for the website-->
-    <div class="nav">
-        <a href="index.html">Homepage</a>
-        <a href= #About>About Me</a>
-        <a href= #Projects>Projects</a>
-        <a href= #Contact >Contact Me</a>
-    </div>
-
-    <!--Information for the homepage-->
-     <h1>Yadhir's Ramrethan's Portfolio</h1>
-     <h2>Summary</h2>
-     <p>I am dedicated to reach my goals and a life long learner.
-        Currently a Bachelor of Science in Information Technology student working to acquire every essential skill in my career and grab any opportunity I can. </p>
-    <hr/>
-    <h2>Education</h2>
-    <ul>
-        <li>Obtained National Senior Certificate in 2022 with 4 distinctions.</li>
-        <li>Richfield Distance Learning Institute - BSc IT - 2025-2028</li>
-    </ul>
-    <hr/>
-    <h2>Work Experience</h2>
-    <ul>
-        <h3>Pest Control Specialists</h3>
-        <p id="job">Administrator</p>
-        <p>January 2023-May 2023</p>
-           <li>Balancing the daily and weekly invoice summary report with the diary.</li>
-           <li>Cold calling, following up on leads along with capturing details.</li>
-           <li>Inbound and outbound telephone calls.</li>
-           <li>Quotations.</li>
-           <li>Maintaining customer relations.</li>
-           <li>Booking of jobs.</li>
-           <li>Order, collection,distribution of stock.</li>
-           <li>On site duties:Assistant to Pest Control Operator with quotations and structural work.</li>
-    </ul>
-    <ul>
-        <h3>Bloom Financial Services</h3>
-       <p id="job">Customer Service Consultant</p>
-        <p>November 2023-January 2025</p>
-            <li>Divulge benefits to clientele.</li>
-            <li>Continuous communication between key partner's together with client's.</li>
-            <li>Secure customer satisfaction.</li>
-            <li>Ongoing monitoring of client's claims.</li>
-            <li>Ensuring query resolution.</li>
-            <li>Maintain high quality service.</li>
-            <li>Achieve weekly KPI’S set out.</li>
-            <li>Handle customer base with good etiquette.</li>
-            <li>Handle objectives relevant.</li>
-    </ul>
-    <hr/>
-
-    <!--About Me section-->
-    <h1 id="About">About Me</h1>
-    <p>I'm Yadhir, a proactive, punctual person with strong communication skills and a lifelong learning mindset.</p>
-
-    <p>I enjoy solving real-world problems and making smart decisions
-       through code and other tech implemenatation strategies.
-    </p>
-
-    <p></p>🚀 Fun Facts</p>
-    <p>Love listening to music.</p>
-    <p></p>I love coffee or tea.</p>
-    <p>Learning about various topics interest me.</p>
-    <p>Hobbies: gym, building things, AI/Informative news.</p>
-
-     <h2>Awards and Certifications</h2>
-     <h3>2024 Best Customer Service Consultant</h3>
-    <ul>
-    <li>Yet to obtain in the future.</li>
-        <h2>Skills</h2>
-    <ul>
-        <li>Customer service: ⭐️⭐️⭐️⭐️⭐️</li>
-        <li>Microsoft Office Suite: ⭐️⭐️⭐️⭐️</li>
-        <li>Organizational skills: ⭐️⭐️⭐️⭐️⭐️</li>
-        <li>Ability to adapt:⭐️⭐️⭐️⭐️⭐️</li>
-        <li>Honesty and Integrity:⭐️⭐️⭐️⭐️⭐️</li>
-    </ul>
-    <hr/>
-    
-    <!--Projects Section-->
-     <h1 id="Projects">Projects</h1>
-      <p>Here are some of my projects:</p>
-      <p>Eco-Smart-Water-Bottle :<a class="underline"href="https://yadhirr.github.io/Eco-Smart-Water-Bottle/">View Project</a></p>
-      <p>To-Do-List:<a class="underline" href="https://yadhirr.github.io/To-do-list/">View Project</a></p>
-
-      <p></p>
-    
-    <hr/>
-    <!--Contact Me section-->
-      <h1 id="Contact">Contact Me</h1>
-        <p>Contact me for any Web Development inquiries:</p>
-<section id="testimonials" class="testimonials" aria-labelledby="testimonials-title">
-  <div class="testimonials_header">
-    <h2 id="testimonials-title">Testimonials</h2>
-    <div class="testimonials__controls">
-      <button class="tbtn" type="button" data-dir="-1" aria-label="Scroll testimonials left">←</button>
-      <button class="tbtn" type="button" data-dir="1" aria-label="Scroll testimonials right">→</button>
-    </div>
-  </div>
-
-  <p class="testimonials_sub">
-    Real feedback from people I've assisted. (scroll to read more).
-  </p>
-
-  <div class="testimonial-track" 
-    role="region" 
-    aria-label="Scrollable testimonials" 
-    tabindex="0" 
-    data-autoscroll="true"
-    data-speed="0.6">
-
-    <!-- Card 1: Paste a real embed here (example placeholder) -->
-    <article class="testimonial-card">
-      <h3 class="sr-only">Review 1</h3>
-
-      <!--  Paste the platform embed code inside this container -->
-      <div class="embed-wrap">
-        <!-- Example: Yelp/Trustpilot embed code goes here -->
-        <!-- (See sections below for where to copy it from) -->
-      </div>
-    </article>
-
-    <!-- Card 2 -->
-    <article class="testimonial-card">
-      <h3 class="sr-only">Review 2</h3>
-      <div class="embed-wrap">
-        <!-- Paste another embed code here -->
-      </div>
-    </article>
-
-    <!-- Card 3 -->
-    <article class="testimonial-card">
-      <h3 class="sr-only">Review 3</h3>
-      <div class="embed-wrap">
-        <!-- Paste another embed code here -->
-      </div>
-    </article>
-  </div>
-</section>
-        <hr/>
-
-    <!--Footer-->
-    <footer>
-        <Small>
-        <p> Copyright © 2026.All rights reserved.</p>
-        </Small>
-    </footer>
-    
-    
-
-    
-    <!--Linking javascript file-->
-<script>
-(function () {
-  const track = document.querySelector(".testimonial-track");
-  const buttons = document.querySelectorAll(".tbtn");
-  if (!track) return;
-
-  // --- Controls (Prev/Next) stay the same ---
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const dir = Number(btn.dataset.dir || 1);
-      const scrollAmount = track.clientWidth * 0.9;
-      track.scrollBy({ left: dir * scrollAmount, behavior: "smooth" });
-    });
-  });
-
-  // Keyboard arrows when track is focused
-  track.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") track.scrollBy({ left: track.clientWidth * 0.6, behavior: "smooth" });
-    if (e.key === "ArrowLeft")  track.scrollBy({ left: -track.clientWidth * 0.6, behavior: "smooth" });
-  });
-
-  // --- Auto-scroll (marquee) ---
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const autoscrollEnabled = track.dataset.autoscroll !== "false";
-  if (!autoscrollEnabled || prefersReduced.matches) return;
-
-  // Read speed from data attribute (px per frame)
-  const SPEED = Math.max(0.2, Number(track.dataset.speed || 0.6));
-
-  // Clone children for seamless looping
-  // (Only if not already cloned)
-  if (!track.dataset.cloned) {
-    const items = Array.from(track.children);
-    items.forEach(node => track.appendChild(node.cloneNode(true)));
-    track.dataset.cloned = "true";
-  }
-
-  let rafId = null;
-  let running = false;
-  let paused = false;
-  let resumeTimer = null;
-
-  function setPaused(value) {
-    paused = value;
-    if (paused) {
-      track.classList.remove("is-autoscrolling");
-    } else {
-      track.classList.add("is-autoscrolling");
-    }
-  }
-
-  function stop() {
-    running = false;
-    if (rafId) cancelAnimationFrame(rafId);
-    rafId = null;
-    track.classList.remove("is-autoscrolling");
-  }
-
-  function start() {
-    if (running) return;
-    running = true;
-    setPaused(false);
-    loop();
-  }
-
-  function loop() {
-    if (!running) return;
-
-    if (!paused) {
-      // Move right
-      track.scrollLeft += SPEED;
-
-      // Seamless loop point:
-      // After cloning, the "real" content length is half the scrollWidth.
-      const half = track.scrollWidth / 2;
-
-      // If we've scrolled past the first set, jump back by half
-      if (track.scrollLeft >= half) {
-        track.scrollLeft -= half;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yadhir Ramrethan Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio website for Yadhir Ramrethan - BSc IT student focused on front-end development, responsive websites, and practical digital solutions."
+    />
+    <meta
+      name="keywords"
+      content="Yadhir Ramrethan, portfolio, web developer, HTML, CSS, JavaScript, BSc IT, student developer"
+    />
+    <meta name="author" content="Yadhir Ramrethan" />
+    <meta property="og:title" content="Yadhir Ramrethan | Portfolio" />
+    <meta
+      property="og:description"
+      content="Professional portfolio website showcasing projects, skills, background, and contact details."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yadhir Ramrethan",
+        "jobTitle": "BSc IT Student | Portfolio Website Developer",
+        "description": "Entry-level web developer building responsive interfaces with HTML, CSS and JavaScript.",
+        "url": "https://your-domain.example",
+        "sameAs": [
+          "https://www.linkedin.com/",
+          "https://github.com/"
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "Responsive Web Design", "Customer Service"]
       }
-    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    rafId = requestAnimationFrame(loop);
-  }
+    <div class="site-shell">
+      <header class="header">
+        <div class="container nav-wrap">
+          <a href="#home" class="brand" aria-label="Go to homepage">
+            <span class="brand-mark">YR</span>
+            <span class="brand-text">Yadhir Ramrethan</span>
+          </a>
 
-  // Pause on hover (desktop)
-  track.addEventListener("mouseenter", () => setPaused(true));
-  track.addEventListener("mouseleave", () => setPaused(false));
+          <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
 
-  // Pause when focused (keyboard / accessibility)
-  track.addEventListener("focusin", () => setPaused(true));
-  track.addEventListener("focusout", () => setPaused(false));
+          <nav id="site-nav" class="nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-  // Pause while user manually interacts (wheel/touch/drag),
-  // then resume after 1.2 seconds.
-  function pauseTemporarily() {
-    setPaused(true);
-    clearTimeout(resumeTimer);
-    resumeTimer = setTimeout(() => setPaused(false), 1200);
-  }
+      <main id="main-content">
+        <section id="home" class="hero section">
+          <div class="container hero-grid">
+            <div class="hero-copy reveal">
+              <p class="eyebrow">Web Developer Portfolio</p>
+              <h1>
+                I build clean, responsive websites that help people and businesses
+                present themselves professionally online.
+              </h1>
+              <p class="hero-text">
+                I’m <strong>Yadhir Ramrethan</strong>, a first-year BSc in IT student focused on
+                turning ideas into polished front-end experiences with HTML, CSS, and JavaScript.
+              </p>
+              <div class="hero-actions">
+                <a href="#projects" class="button button-primary">View Projects</a>
+                <a href="#contact" class="button button-secondary">Hire / Contact Me</a>
+              </div>
+              <ul class="hero-highlights" aria-label="Quick highlights">
+                <li><strong>1st Year</strong><span>BSc in IT</span></li>
+                <li><strong>1 year 3 months</strong><span>Customer service experience</span></li>
+                <li><strong>5 months</strong><span>Pest control experience</span></li>
+              </ul>
+            </div>
 
-  track.addEventListener("wheel", pauseTemporarily, { passive: true });
-  track.addEventListener("touchstart", pauseTemporarily, { passive: true });
-  track.addEventListener("touchmove", pauseTemporarily, { passive: true });
-  track.addEventListener("pointerdown", pauseTemporarily, { passive: true });
-  track.addEventListener("scroll", () => {
-    // If the user scrolls via trackpad, pause for a moment
-    pauseTemporarily();
-  }, { passive: true });
+            <aside class="profile-card reveal" aria-label="Profile summary">
+              <div class="avatar" aria-hidden="true">YR</div>
+              <h2>Junior Developer</h2>
+              <p>
+                Building a strong foundation in front-end and full-stack development while
+                bringing communication, discipline, and problem-solving from real work experience.
+              </p>
+              <div class="profile-meta">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive UI</span>
+              </div>
+            </aside>
+          </div>
+        </section>
 
-  // Optional: pause when the track is offscreen (performance)
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries[0]?.isIntersecting;
-    if (!visible) setPaused(true);
-    else setPaused(false);
-  }, { threshold: 0.15 });
+        <section id="about" class="section section-panel">
+          <div class="container about-grid">
+            <div class="section-heading reveal">
+              <p class="eyebrow">About Me</p>
+              <h2>A motivated student developer with practical people skills.</h2>
+            </div>
+            <div class="about-content reveal">
+              <p>
+                I’m currently studying toward a BSc in IT and building my portfolio through
+                practical, review-ready projects. My goal is to grow into a reliable full-stack
+                developer who can create user-focused digital products.
+              </p>
+              <p>
+                My background in customer service helped me develop communication, patience,
+                and problem-solving. My work experience in pest control strengthened my discipline,
+                consistency, and ability to work under pressure. I bring those strengths into every project I build.
+              </p>
+              <div class="info-grid" role="list" aria-label="Personal details">
+                <div class="info-card" role="listitem">
+                  <span class="info-label">Current Focus</span>
+                  <span class="info-value">Front-end development & portfolio projects</span>
+                </div>
+                <div class="info-card" role="listitem">
+                  <span class="info-label">Learning Path</span>
+                  <span class="info-value">BSc IT • Web development • Practical projects</span>
+                </div>
+                <div class="info-card" role="listitem">
+                  <span class="info-label">Strengths</span>
+                  <span class="info-value">Communication, consistency, problem-solving</span>
+                </div>
+                <div class="info-card" role="listitem">
+                  <span class="info-label">Open To</span>
+                  <span class="info-value">Internships, junior roles, freelance opportunities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-  io.observe(track);
+        <section id="skills" class="section">
+          <div class="container">
+            <div class="section-heading reveal centered">
+              <p class="eyebrow">Skills & Tech Stack</p>
+              <h2>Tools and strengths I’m building with.</h2>
+            </div>
 
-  // If user changes motion preference while on page
-  prefersReduced.addEventListener?.("change", (e) => {
-    if (e.matches) stop();
-    else start();
-  });
+            <div class="skills-grid">
+              <article class="skill-card reveal">
+                <h3>Front-End</h3>
+                <div class="tags">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                  <span>Responsive Design</span>
+                  <span>Accessibility Basics</span>
+                </div>
+              </article>
+              <article class="skill-card reveal">
+                <h3>Learning / Growing</h3>
+                <div class="tags">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>Git & GitHub</span>
+                  <span>APIs</span>
+                  <span>SEO Structure</span>
+                </div>
+              </article>
+              <article class="skill-card reveal">
+                <h3>Professional Strengths</h3>
+                <div class="tags">
+                  <span>Customer Communication</span>
+                  <span>Time Management</span>
+                  <span>Adaptability</span>
+                  <span>Attention to Detail</span>
+                  <span>Professional Presentation</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
 
-  // Start auto-scroll
-  start();
-})();
-</script>
+        <section id="projects" class="section section-panel">
+          <div class="container">
+            <div class="projects-header reveal">
+              <div class="section-heading">
+                <p class="eyebrow">Featured Work</p>
+                <h2>Projects that demonstrate my skills and growth.</h2>
+              </div>
+              <div class="filter-group" aria-label="Project filters">
+                <button class="filter-button active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="html">HTML/CSS/JS</button>
+                <button class="filter-button" data-filter="future">Future Interns</button>
+                <button class="filter-button" data-filter="ui">UI / UX</button>
+              </div>
+            </div>
 
+            <div class="project-grid">
+              <article class="project-card reveal" data-category="html ui">
+                <div class="project-top">
+                  <span class="project-label">Portfolio</span>
+                  <span class="project-year">2026</span>
+                </div>
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                  A professional portfolio designed to showcase my background, skills, and project work
+                  with strong layout structure, responsive design, and clean UI.
+                </p>
+                <ul>
+                  <li>Responsive multi-section layout</li>
+                  <li>SEO-ready semantic HTML</li>
+                  <li>Interactive navigation and filtering</li>
+                </ul>
+                <div class="project-links">
+                  <a href="#contact">Request Code Review</a>
+                </div>
+              </article>
 
-</body>
+              <article class="project-card reveal" data-category="future html">
+                <div class="project-top">
+                  <span class="project-label">Internship Task</span>
+                  <span class="project-year">2026</span>
+                </div>
+                <h3>Eco-Smart Water Bottle</h3>
+                <p>
+                  A responsive multi-page product website for the EcoSmart Water Bottle brand.
+                  This project showcases a sustainable product with interactive pricing, product customization, and contact form validation using HTML, CSS, and JavaScript.
+                </p>
+                <ul>
+                  <li>Many people rely on single-use plastic bottles and lack a convenient way to track hydration sustainably</li>
+                  <li>Responsive design, product catalog, user login, cart system, hydration tracking, and eco-friendly branding</li>
+                  <li>Understanding how to design a user-friendly and responsive website</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://yadhirr.github.io/Eco-Smart-Water-Bottle/">Live Demo</a>
+                </div>
+              </article>
+
+              <article class="project-card reveal" data-category="ui html">
+                <div class="project-top">
+                  <span class="project-label">Front-End Concept</span>
+                  <span class="project-year">2026</span>
+                </div>
+                <h3>To-do-list</h3>
+                <p>
+                  This is a simple and interactive To-Do List web application built using HTML, CSS, and vanilla JavaScript.
+                </p>
+                <ul>
+                  <li>The purpose of this project is to demonstrate how to manage tasks dynamically in the browser</li>
+                  <li>The interface is clean, minimal, and responsive</li>
+                  <li>It demonstrates key front-end development concepts </li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://yadhirr.github.io/To-do-list/">Live Demo</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="resume" class="section">
+          <div class="container resume-grid">
+            <div class="section-heading reveal">
+              <p class="eyebrow">Resume Snapshot</p>
+              <h2>Education, experience, and professional growth.</h2>
+            </div>
+
+            <div class="timeline reveal" aria-label="Career timeline">
+              <article class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h3>BSc in IT (First Year)</h3>
+                  <p class="timeline-subtitle">Current studies</p>
+                  <p>
+                    Building foundational knowledge in information technology while growing practical
+                    web development skills through projects and portfolio work.
+                  </p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h3>Customer Service Experience</h3>
+                  <p class="timeline-subtitle">1 year 3 months</p>
+                  <p>
+                    Developed communication, client support, and problem-resolution skills that translate
+                    directly into user-centered development and professional teamwork.
+                  </p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <span class="timeline-dot"></span>
+                <div>
+                  <h3>Pest Control Experience</h3>
+                  <p class="timeline-subtitle">5 months</p>
+                  <p>
+                    Strengthened discipline, consistency, time management, and the ability to work effectively
+                    in real-world environments.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-panel cta-section">
+          <div class="container cta-card reveal">
+            <div>
+              <p class="eyebrow">Ready to collaborate?</p>
+              <h2>Let’s build something practical, polished, and impactful.</h2>
+                I’m open to internships, junior opportunities, and portfolio-building collaborations.
+              </p>
+            </div>
+            <a href="#contact" class="button button-primary">Start a Conversation</a>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <div class="container contact-grid">
+            <div class="section-heading reveal">
+              <p class="eyebrow">Contact</p>
+              <h2>Let’s connect.</h2>
+              </p>
+              <div class="contact-links">
+                <a href="https://www.linkedin.com/in/yadhir-ramrethan-647961266/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://github.com/Yadhirr" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="mailto:yadhir.ramrethan29@gmail.com">Email</a>
+              </div>
+            </div>
+
+            <form class="contact-form reveal" id="contactForm" novalidate>
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
+                <small class="error-message" aria-live="polite"></small>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                <small class="error-message" aria-live="polite"></small>
+              </div>
+
+              <div class="form-row">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Opportunity / project enquiry" required />
+                <small class="error-message" aria-live="polite"></small>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Tell me a bit about your enquiry..." required></textarea>
+                <small class="error-message" aria-live="polite"></small>
+              </div>
+
+              <button type="submit" class="button button-primary button-full">Send Message</button>
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-wrap">
+          <p>© <span id="year"></span> Yadhir Ramrethan.</p>
+          <a href="#home">Back to top ↑</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-
