@@ -5,9 +5,6 @@ I created this project as part of my **Future Interns Full Stack Web Development
 
 This website acts as my **digital resume and proof of work**, where recruiters, clients, and hiring managers can learn more about me and the projects I have worked on.
 
-## Live Demo
-[View Portfolio]((https://yadhirr.github.io/FUTURE_FS_01/))
-
 ## Project Purpose
 The purpose of this project is to create a clean, responsive, and professional portfolio website that reflects my journey as a student developer. It highlights my front-end development skills, practical project work, and career goals in a way that is easy to view on both desktop and mobile devices.
 
